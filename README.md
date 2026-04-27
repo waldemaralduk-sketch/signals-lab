@@ -14,21 +14,60 @@ An interactive playground for signals & systems concepts, built with Streamlit.
 
 ## Install & run
 
-Recommended on this machine, using `uv`:
+First, clone the project:
 
 ```bash
-cd /home/waldemar/signals-lab
-uv run --with streamlit --with numpy --with scipy --with plotly streamlit run app.py
+git clone https://github.com/waldemaralduk-sketch/signals-lab.git
+cd signals-lab
 ```
 
-Normal Python/pip method, if `python3-venv` is installed:
+### Windows
+
+Open **PowerShell** in the `signals-lab` folder and run:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+If PowerShell blocks activation, run this once in the same PowerShell window:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+Then try the activation command again:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+Alternative Windows Command Prompt activation:
+
+```cmd
+python -m venv .venv
+.venv\Scripts\activate.bat
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+### macOS / Linux
 
 ```bash
-cd /home/waldemar/signals-lab
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 streamlit run app.py
+```
+
+### Using uv
+
+If you already use `uv`, you can run it without manually creating a virtual environment:
+
+```bash
+uv run --with streamlit --with numpy --with scipy --with plotly streamlit run app.py
 ```
 
 The app opens at **http://localhost:8501** by default.
